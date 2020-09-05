@@ -2,7 +2,7 @@ cantidad_frases = 0
 mas_frases = "si"
 
 while mas_frases == "si":
-    print("Introduzca una frase")
+    print("Introduzca una frase:")
     arreglo_frases = [input()]
     print("Quiere introducir más frases? (si/no)")
     mas_frases = input()
