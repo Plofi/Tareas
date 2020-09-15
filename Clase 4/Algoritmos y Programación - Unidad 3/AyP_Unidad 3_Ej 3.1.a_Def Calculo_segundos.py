@@ -2,7 +2,7 @@
 # En programa sería:
 
 def calculo_seg(h,m,s):
-    return (h*3600+m*60+s)
+    return h * 3600 + m * 60 + s
 
 h= int(input("Ingrese la hora:")) 
 m= int(input("Ingrese los minutos:")) 
