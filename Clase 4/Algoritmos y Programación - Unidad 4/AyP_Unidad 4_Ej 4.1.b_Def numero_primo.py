@@ -13,6 +13,8 @@ def numero_primo (n):
                 (str) Cadena de texto que indica "Su número es primo o no es primo."
 
     """
+    assert n> 0,"Su número debe ser mayor a 0."
+    assert isinstance(n,int),"Su número debe ser un número entero."
 
     if n<2:
         return "Su número no es primo."
@@ -23,4 +25,4 @@ def numero_primo (n):
         return "Su número es primo."
 
 #ej.
-print(numero_primo(41))
+print(numero_primo(47))

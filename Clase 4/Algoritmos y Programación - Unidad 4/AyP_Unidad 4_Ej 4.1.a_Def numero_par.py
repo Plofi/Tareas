@@ -9,11 +9,13 @@ def numero_par(n):
     Devuelve si un número es par o impar.
 
         Parameters: 
-                (n): Numero entero
+                int(n): Numero entero.
         
         Returns:
                 (str) Cadena de texto que indica "Su número es par o impar"
     """
+    assert isinstance(n,int),"Su número ingresado debe ser un entero."
+
     if n % 2 == 0:
         return ("Su número es par.")
     else:
