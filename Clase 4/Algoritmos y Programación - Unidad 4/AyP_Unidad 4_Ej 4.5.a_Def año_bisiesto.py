@@ -10,12 +10,13 @@ def bisiesto(n):
     Devuelve si un año es bisiesto.
 
         Parameters:
-                (n) Año.
+                int (n) Año ingresado en números enteros.
         
         Returns:
                 (str) Cadena de texto que indica "Su año es o no es bisiesto."
     """
-
+    assert isinstance(n, int),"Su año debe ser ingresado en números enteros."
+    
     if n % 4 == 0 and not n % 100 == 0 or n % 400 == 0:
         return "Su año es bisiesto."
     else:

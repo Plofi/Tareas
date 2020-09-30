@@ -1,30 +1,31 @@
 """
 Ej.4.5.f. Escribir una función que dada una fecha,
 indique la cantidad de días transcurridos en ese año hasta la fecha.
-
 """
 def bisiesto(a):
     """
     Devuelve si un año es bisiesto.
 
         Parameters:
-                (n) Año.
+                int (a) Año ingresado en números enteros.
         
         Returns:
-                (bool) Verdadero o falso.
+                (bool) Indica si su año es bisiesto devolviendo: Verdadero o Falso. 
     """
+    assert isinstance(a, int),"Su año debe ser ingresado en números enteros."
 
     if a % 4 == 0 and not a % 100 == 0 or a % 400 == 0:
         return True 
     else:
         return False  
 
+
 def fecha(d,m,a):
     """
     Devuelve si una fecha es válida tras recibirla previamente como día, mes y año en forma numérica.
 
         Parameters:
-                int (d,m,a) Día, mes y año (se toma como válido hasta el año 2020).
+                int (d,m,a) Día, mes y año ingresados en números enteros (se toma como válido hasta el año 2020).
         
         Returns:
                 (bool) Verdadero o Falso.
@@ -55,12 +56,16 @@ def total_d_transcurridos(d,m,a):
     Devuelve la cantidad de días trascurridos del año previamente dado hasta la fecha.
 
         Parameters:
-                int (d,m,a) Día, mes y año.
+                int (d,m,a) Día, mes y año ingresados en números enteros.
         
         Returns:
                 (str) Cadena de texto que indica "Han transcurrido (d) día/s desde que inició el año".
                 
     """
+    assert isinstance(d,int), "Su día/s debe ser un número entero."
+    assert isinstance(m,int), "Su mes/es debe ser un número entero."
+    assert isinstance(a,int), "Su año/s debe ser un número entero."
+    
     f_correcta = fecha(d,m,a)
     if f_correcta == True:
         d_meses = [0,31,28,31,30,31,30,31,31,30,31,30,31] 

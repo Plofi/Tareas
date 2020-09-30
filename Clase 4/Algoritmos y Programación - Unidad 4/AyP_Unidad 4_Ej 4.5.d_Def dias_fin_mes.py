@@ -8,11 +8,12 @@ def bisiesto(a):
     Devuelve si un año es bisiesto.
 
         Parameters:
-                int (n) Año.
+                int (a) Año ingresado en números enteros.
         
         Returns:
-                (bool) Verdadero o falso.
+                (bool) Indica si su año es bisiesto devolviendo: Verdadero o Falso. 
     """
+    assert isinstance(a, int),"Su año debe ser ingresado en números enteros."
 
     if a % 4 == 0 and not a % 100 == 0 or a % 400 == 0:
         return True 
@@ -25,7 +26,7 @@ def d_fin_mes(d,m,a):
     Devuelve la cantidad de días que falan hasta fin de mes, partiendo de una fecha previamente dada.
 
         Parameters:
-                int (d,m,a) Días, mes y año.
+                int (d,m,a) Días, mes y año ingresados en números enteros.
         
         Returns:
                 (str) Cadena de texto que indica "Faltan (d) día/s para llegar a fin de mes." 
@@ -36,12 +37,14 @@ def d_fin_mes(d,m,a):
         Devuelve la cantidad de días que tiene Febrero, dependiendo de si el año es o no bisiesto.
             
             Parameters:
-                    int (a) Año.
+                    int (a) Año ingresado en números enteros.
         
             Returns:
                     int (feb) La cantiad de días que tiene Febrero en ese año.
                 
         """
+        assert isinstance(a, int),"Su año debe ser ingresado en números enteros."
+
         a_bisiesto = bisiesto(a) # Llama a esa función.
         if a_bisiesto == True:
             feb = 29
@@ -50,6 +53,10 @@ def d_fin_mes(d,m,a):
             feb = 28
             return feb
     
+    assert isinstance(d, int),"Sus día/s deben ser ingresados en números enteros."
+    assert isinstance(m, int),"Sus mes/es deben ser ingresados en números enteros."
+    assert isinstance(a, int),"Su año debe ser ingresado en números enteros."
+
     m_31d = [1,3,5,7,8,10,12] # Meses con 31 días.
     m_30d = [4,6,9,11] # Meses con 30 días. 
     feb = feb(a) # Varia si es bisiesto, llama a esa función.

@@ -9,12 +9,15 @@ def dias(m,a):
     Devuelve la cantidad de días correspondientes a un mes y año/s previamente dados.
 
         Parameters:
-                int (m,a) Mes y año.
+                int (m,a) Mes y año ingresados como números enteros.
         
         Returns:
                 (str) Cadena de texto que indica "La cantidad de (d) día/s es el equivalente al año y mes que ingresó".
                 
     """
+    assert isinstance(m,int), "Su mes debe ser ingresado en números enteros."
+    assert isinstance(a,int), "Su año debe ser ingresado en números enteros."
+
     a = a * 365 + (a // 4) # Le sumo un día cada 4 años x bisiesto.
     a = a
     d_meses = [0,31,28,31,30,31,30,31,31,30,31,30,31] # Para que sea más exacto recorro la duración de los meses hasta el dado y sumo su cantidad de días.

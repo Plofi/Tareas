@@ -23,4 +23,4 @@ def absoluto(n):
         return -n
 
 #Ej.
-print(absoluto(-39))
+print(absoluto(68))

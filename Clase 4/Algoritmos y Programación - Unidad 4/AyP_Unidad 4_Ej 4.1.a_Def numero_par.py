@@ -9,7 +9,7 @@ def numero_par(n):
     Devuelve si un número es par o impar.
 
         Parameters: 
-                int(n): Numero entero.
+                int(n): Número entero.
         
         Returns:
                 (str) Cadena de texto que indica "Su número es par o impar"

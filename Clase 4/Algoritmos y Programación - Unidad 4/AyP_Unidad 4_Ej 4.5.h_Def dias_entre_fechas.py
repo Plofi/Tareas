@@ -1,6 +1,6 @@
 """
-Ej.4.5.f. Escribir una función que dada una fecha,
-indique la cantidad de días transcurridos en ese año hasta la fecha.
+Ej.4.5.h. Escribir una función que dadas dos fechas,
+indique la cantidad de día/s transcurridos entre ambas.
 
 """
 def bisiesto(a):
@@ -51,24 +51,41 @@ def fecha(d,m,a):
     else:  
         return False
 
-def d_ano(a):
-        """
-        Devuelve la cantidad de días de un año bisiesto o no.
-            
-            Parameters:
-                    int (a) Año ingresado en números enteros.
-        
-            Returns:
-                    (int) La cantidad de días de un año bisiesto(366) o no bisiesto(365).
-            
-        """
-        assert isinstance(a, int),"Su año debe ser ingresado en números enteros."
 
-        a_bisiesto = bisiesto(a) # Llama a esa función.
-        if a_bisiesto == True:
-            return 366
-        else:
-            return 365
+def total_d_transcurridos(d,m,a):
+    """
+    Devuelve la cantidad de días trascurridos del año previamente dado hasta la fecha.
+
+        Parameters:
+                int (d,m,a) Día, mes y año ingresados en números enteros.
+        
+        Returns:
+                (int) Total de día/s transcurridos desde que inició el año expresado en números enteros.
+                
+    """
+    assert isinstance(d,int), "Su día/s debe ser un número entero."
+    assert isinstance(m,int), "Su mes/es debe ser un número entero."
+    assert isinstance(a,int), "Su año/s debe ser un número entero."
+    
+    f_correcta = fecha(d,m,a)
+    if f_correcta == True:
+        d_meses = [0,31,28,31,30,31,30,31,31,30,31,30,31] 
+        a = bisiesto(a)
+        if a == True:
+            d_meses[2]= 29
+        suma_meses = 0
+        d_desde_inicio_ano = 0
+    
+        for i in range(1,m): # Recorro la duración de los meses sin incluir al mes dado y sumo su cantidad de días.
+            i = d_meses[i] # i va a ir tomando el valor del array de cada mes hasta el anterior al dado.
+            suma_meses = suma_meses + i
+            d_desde_inicio_ano = suma_meses
+    
+        total_d_transcurridos = d + d_desde_inicio_ano
+        return total_d_transcurridos
+    else:
+        return "Fecha ingresada inválida."
+
 
 def d_fin_mes(d,m,a):
     """
@@ -147,34 +164,87 @@ def d_fin_ano(m):
         return d_hasta_fin_ano
 
 
-def total_d_transcurridos(d,m,a):
+def total_d_fin_ano(d,m,a):
     """
-    Devuelve la cantidad de días trascurridos del año previamente dado hasta la fecha.
+    Devuelve la cantidad de días que faltan para terminar el año previamente dado.
 
         Parameters:
                 int (d,m,a) Día, mes y año ingresados en números enteros.
         
         Returns:
-                (str) Cadena de texto que indica "Han transcurrido (d) día/s desde que inició el año".
+                (str) Cadena de texto que indica "Faltan (d) día/s para terminar el año que ingresó".
                 
     """
     assert isinstance(d,int), "Su día/s debe ser ingresado en números enteros."
     assert isinstance(m,int), "Su mes/es debe ser ingresado en números enteros."
     assert isinstance(a,int), "Su año/s debe ser ingresado en números enteros."
 
-    f_correcta = fecha(d,m,a) # Corroboro que la fecha ingresada sea válida.
+    f_correcta = fecha(d,m,a) # Chequeo que ingresen una fecha correcta, llamando a la función.
     if f_correcta == True:
-        ano = d_ano(a) # Llamo a esta función para tener la cantidad de días total del año ingresado.
         d_hasta_fin_mes = d_fin_mes(d,m,a) # Llamo a esta función para calcular los días que faltan del mes dado.
-        d_hasta_fin_ano = d_fin_ano(m) # Llamo a esta función para saber cuantos días faltan de los meses restantes.
-        total_d_transcurridos = ano - (d_hasta_fin_mes + d_hasta_fin_ano)  
-        return f"Han transcurrido {total_d_transcurridos} día/s desde que inició el año."
+        d_hasta_fin_ano = d_fin_ano(m) # Llamo a esta función para saber cuantos días falta de los meses restantes.
+        total_d_fin_ano = d_hasta_fin_mes + d_hasta_fin_ano 
+        return f"Faltan {total_d_fin_ano} día/s para terminar el año que ingresó."
     else:
         return "Su fecha es inválida."
 
-#Ej.
-d = int(input("Ingrese la cantidad de día/s de su fecha, le diremos cuantos días transcurrieron del año:"))
-m = int(input("Ingrese la cantidad de meses de su fecha:"))
-a = int(input("Ingrese la cantidad de años de su fecha:"))
 
-print(total_d_transcurridos(d,m,a))
+def d_entre_fechas(d1,m1,a1,d2,m2,a2):
+    """
+    Devuelve la cantidad de días que hay entre dos fechas.
+
+        Parameters:
+                int (d,m,a) Día, mes y año de dos fechas distintas entre sí, ingresadas en números enteros.
+        
+        Returns:
+                (str) Cadena que indica que la cantidad de día/s equivalentes entre sus fechas ingresadas.
+                
+    """
+    assert isinstance(d1,int), "Su día/s debe ser un número entero."
+    assert isinstance(m1,int), "Su mes/es debe ser un número entero."
+    assert isinstance(a1,int), "Su año/s debe ser un número entero."
+    assert isinstance(d2,int), "Su día/s debe ser un número entero."
+    assert isinstance(m2,int), "Su mes/es debe ser un número entero."
+    assert isinstance(a2,int), "Su año/s debe ser un número entero."
+        
+    if a1 == a2:
+        if m1 == m2:
+            d_entre_f = d2 - d1
+            return f"La cantidad de días entre sus fechas ingresadas es equivalente a:{d_entre_f} día/s"
+        
+        elif m2 >= m1:
+            d_m1 = total_d_transcurridos(d1,m1,a1)
+            d_m2 = total_d_transcurridos(d2,m2,a2)
+            d_entre_f = d_m2 - d_m1 
+        else:
+            if m1 >= m2:
+                d_m1 = total_d_transcurridos(d1,m1,a1)
+                d_m2 = total_d_transcurridos(d2,m2,a2)
+                d_entre_f = d_m1 - d_m2
+        return f"La cantidad de días entre sus fechas ingresadas es equivalente a:{d_entre_f} día/s"     
+       
+    elif a2 > a1:
+        a2 = total_d_transcurridos(d2,m2,a2)
+        a1 = total_d_fin_ano (d1,m1,a1)
+        d_entre_f = a1 + a2
+        return f"La cantidad de días entre sus fechas ingresadas es equivalente a:{d_entre_f} día/s"  
+
+    elif a1 > a2:
+        a1 = total_d_transcurridos(d1,m1,a1)
+        a2 = total_d_fin_ano (d2,m2,a2)
+        d_entre_f = a1 + a2
+        return f"La cantidad de días entre sus fechas ingresadas es equivalente a:{d_entre_f} día/s"
+
+    else:
+        return "Sus fechas son inválidas."
+
+#Ej.
+d1 = int(input("Ingrese la cantidad de día/s de su fecha 1, le diremos cuantos días hay entre ambas fechas:"))
+m1 = int(input("Ingrese la cantidad de mes/es de su fecha 1:"))
+a1 = int(input("Ingrese la cantidad de años de su fecha 1:"))
+d2 = int(input("Ingrese la cantidad de día/s de su fecha 2:"))
+m2 = int(input("Ingrese la cantidad de mes/es de su fecha 2:"))
+a2 = int(input("Ingrese la cantidad de años de su fecha 2:"))
+
+print(d_entre_fechas(d1,m1,a1,d2,m2,a2))
+
