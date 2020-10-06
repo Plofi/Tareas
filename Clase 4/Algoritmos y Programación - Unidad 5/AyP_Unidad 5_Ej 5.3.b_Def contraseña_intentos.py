@@ -12,7 +12,8 @@ def contraseña_intentos():
                 (str) Cadena de caracteres y números.
         
         Returns:
-                (str) Cadena que indica si la contraseña es o no correcta.
+                (str) Cadena que indica si la contraseña es o no correcta y 
+                cuantos intentos le  quedan al usuario.
     
     """
     password = "2046WKW"

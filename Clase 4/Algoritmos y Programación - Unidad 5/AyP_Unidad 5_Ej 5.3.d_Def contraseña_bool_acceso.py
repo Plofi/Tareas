@@ -14,7 +14,9 @@ def contraseña_bool():
                 (str) Cadena de caracteres y números.
         
         Returns:
-                (str) and (bool) Cadena que indica si la contraseña es o no correcta: "Acceso: True or False", si la contraseña ingresada fue correcta o no.
+                (bool) "Acceso: True or False", si la contraseña ingresada fue correcta o no. 
+                (str) Cadena que indica si la contraseña es o no correcta y cuantos intentos le quedan al usuario. 
+                
                    
     """
     import time

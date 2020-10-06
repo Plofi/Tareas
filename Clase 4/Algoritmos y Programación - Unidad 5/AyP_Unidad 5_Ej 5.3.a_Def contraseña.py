@@ -12,7 +12,7 @@ def contraseña():
                 (str) Cadena de caracteres y números.
         
         Returns:
-                (str) Cadena que indica si la contraseña es o no correcta.
+                (str) Cadena de texto que indica si la contraseña es o no correcta.
     
     """
     password = "2046WKW"
