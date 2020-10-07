@@ -4,7 +4,7 @@ Ej.4.1.b. Escribir una función que dado un número entero n, indicar si es prim
 
 def numero_primo (n):
     """
-    Devuelve si un numero entero es primo o no.
+    Devuelve si un número entero es primo o no.
 
         Parameters:
                 (n) Número entero mayor a 0.
