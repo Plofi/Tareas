@@ -2,8 +2,7 @@
 Ejercicio 6.2. Escribir funciones que dada una cadena y un caracter:
 c) Reemplace todos los dígitos en la cadena por el caracter. Ej: 'su clave es: 1540' y
 'X' debería devolver 'su clave es: XXXX'
-d) Inserte el caracter cada 3 dígitos en la cadena. Ej. '2552552550' y '.' debería devolver
-'255.255.255.0'
+
 """
 
 def reemplazo_X(cadena):
