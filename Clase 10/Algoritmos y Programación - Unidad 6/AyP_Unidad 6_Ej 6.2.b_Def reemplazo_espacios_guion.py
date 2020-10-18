@@ -5,16 +5,17 @@ debería devolver 'mi_archivo_de_texto.txt'
 
 """
 
-def reemplazo_guion_bajo(cadena):
+def reemplazo_espacio(cadena,reemplazo):
     """
-    Inserta un "guión bajo" entre los caracteres de una cadena donde había espacios.
+    Inserta un caracter dado, donde antes había espacios.
 
         Parameters:
                 (str) Cadena de caracteres.
+                ("") Un caracter o una cadena, para ingresar como reemplazo.
 
         Returns:
-                (str) Cadena resultante de insertar un guión bajo(_) 
-                entre cada caracter de la cadena dada, donde antes había un espacio.
+                (str) Cadena resultante de insertar un caracter dado
+                donde antes había un espacio.
                 
     """
     assert isinstance(cadena, str), "Debe ingresar una cadena de caracteres."
@@ -24,8 +25,8 @@ def reemplazo_guion_bajo(cadena):
         if caracter != " ":
             resultado += caracter
         else:
-            resultado += "_"
+            resultado += reemplazo
     return resultado
 
 #Ej.
-print(reemplazo_guion_bajo("mi archivo de texto.txt"))
+print(reemplazo_espacio("mi archivo de texto.txt", "_"))

@@ -5,24 +5,25 @@ c) Reemplace todos los dígitos en la cadena por el caracter. Ej: 'su clave es: 
 
 """
 
-def reemplazo_X(cadena):
+def reemplazo_caracteres(cadena,reemplazo):
     """
-    Reemplaza todos los dígitos en una tupla o cadena por el caracter "X".
+    Reemplaza todos los dígitos en una tupla o cadena por el caracter dado.
 
         Parameters:
                 (tuple) or (str) Tupla o cadena de caracteres y/o números.
+                ("") Cadena o caracter por el cual desea reemplazar.
 
         Returns:
                 (str) Cadena resultante que se obtiene de reemplazar 
-                todos los dígitos de una tupla dada por "X" en su lugar.
+                todos los dígitos de una tupla dada por el caracter ingresado en su lugar.
                 
     """
     cadena = tuple(cadena)
     resultado = ""
     for caracter in cadena:
-        resultado += "X"
+        resultado += reemplazo
     return resultado
 
 #Ej.
 cadena = input("Ingrese su clave:")
-print("Su clave es:", reemplazo_X(cadena))
+print("Su clave es:", reemplazo_caracteres(cadena,"X"))
