@@ -78,6 +78,7 @@ def resultados_examenes():
     """
     centinela = input("Desea ingresar un alumno y su examen (-No- para terminar): ")
     alumno = {}
+    #alumnos = []
     numero_examen = 1
     aprobados = 0
     while not centinela == "No":
@@ -90,10 +91,12 @@ def resultados_examenes():
         if resultado != "Examen no aprobado.":
             aprobados += 1
         print(alumno)
+        #alumnos.append(alumno)
+        
         centinela = input("Desea ingresar otro alumno y su examen (-No- para terminar):")
         numero_examen += 1
 
-    porcentaje_examenes = (aprobados * 100) // numero_examen-1
-    return print(f"De {numero_examen-1} alumnos, aprobaron: {aprobados}, un {porcentaje_examenes} % de aprobados.")
+    porcentaje_examenes = (aprobados * 100) / numero_examen-1
+    return print(f"De {numero_examen-1} alumnos, aprobaron: {aprobados}, un {porcentaje_examenes:.2f} % de aprobados.") 
 
 resultados_examenes()
