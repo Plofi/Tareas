@@ -49,18 +49,18 @@ def inserta_punto_miles(numero):
     sumo_ceros = ""
 
     if total_numeros % 3 == 0:
-        return print(insertar_punto(numero))
+        return (insertar_punto(numero))
     elif total_numeros % 3 == 2:
         sumo_ceros += "0000" + numero
         sumo_ceros = insertar_punto(sumo_ceros)
         num_final = sumo_ceros[5:]
-        return print(num_final)
+        return (num_final)
     else:
         if total_numeros % 3 == 1:
             sumo_ceros += "00" + numero
             sumo_ceros = insertar_punto(sumo_ceros)
             num_final = sumo_ceros[2:]
-        return print(num_final)
+        return (num_final)
 
 #Ej.
 print(inserta_punto_miles(1234567890))

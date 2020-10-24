@@ -22,7 +22,7 @@ def consonantes(cadena):
     for caracter in cadena:
         if caracter not in vocales:
             cadena_final += caracter
-    print(cadena_final)
+    return(cadena_final)
 
 #Ej.
 print(consonantes("Algoritmos y Logaritmos"))

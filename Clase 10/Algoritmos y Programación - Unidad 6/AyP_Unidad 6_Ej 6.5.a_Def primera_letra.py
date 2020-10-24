@@ -21,7 +21,7 @@ def primera_letra(cadena):
     cadena = cadena.split()
     for i in cadena:
         cadena_final += i[0]
-    print(cadena_final)
+    return(cadena_final)
 
 #Ej.
 print(primera_letra("Universal Serial Bus"))

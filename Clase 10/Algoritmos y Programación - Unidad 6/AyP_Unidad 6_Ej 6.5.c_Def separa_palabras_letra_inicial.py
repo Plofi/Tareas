@@ -27,7 +27,7 @@ def separa_palabras_letra_inicial(cadena,caracter):
         if primer_letra == caracter:
             cadena_final += palabra + " "
     cadena_final = cadena_final[:-1] 
-    print(cadena_final)
+    return(cadena_final)
 
 #Ej.
 print(separa_palabras_letra_inicial("Antes de ayer","A"))

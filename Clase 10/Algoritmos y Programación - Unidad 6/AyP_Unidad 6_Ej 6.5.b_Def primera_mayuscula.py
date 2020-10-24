@@ -26,7 +26,7 @@ def primera_mayuscula(cadena):
         cadena_final += primer_letra # La agrega a la cadena final
         cadena_final += i[1:]+ " " # Reconstruye el resto de la palabra más el espacio
     cadena_final = cadena_final[:-1] #Quita el último espacio
-    print(cadena_final)
+    return(cadena_final)
 
 #Ej.
 print(primera_mayuscula("república argentina"))

@@ -26,7 +26,7 @@ def vocales(cadena):
             if caracter in vocales:
                 cadena_final += caracter
         cadena_final += " "
-    print(cadena_final)
+    return(cadena_final)
 
 #Ej.
 print(vocales("Sin consonantes"))
