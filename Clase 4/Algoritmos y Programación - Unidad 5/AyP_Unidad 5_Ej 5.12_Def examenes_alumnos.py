@@ -62,26 +62,28 @@ def resultados_examenes():
     """
     Devuelve el número de examen, el nombre del alumno y el resultado del examen:
     si fue aprobado o no y el porcentaje de respuestas correctas. 
-    Devuelve la cantidad de alumnos, cuantos aprobaron y el porcentaje de aprobados.
+    Devuelve el reultado final de todos los examenes, la cantidad de alumnos,
+    cuantos aprobaron y el porcentaje de aprobados.
 
             Parameters:
                     (str) Nombre del alumno.
                     (int) Cantidad total de ejercicios del examen.
                     (int) Cantidad de ejercicios necesarios para aprobar.
-                    Cantidad de respuestas correctas del alumno.
+                    (str) Cantidad de respuestas correctas del alumno.
             
             Returns:
                     (str) El número de examen, el nombre del alumno y el resultado del examen:
                     "Examen no aprobado o aprobado con % / 100".
-                    Devuelve la cantidad de alumnos, cuantos aprobaron y el porcentaje de aprobados.
+                    Devuelve los resultados finales por cada alumno, la cantidad de alumnos,
+                    cuantos aprobaron y el porcentaje de aprobados.
 
     """
     centinela = input("Desea ingresar un alumno y su examen (-No- para terminar): ")
-    alumno = {}
-    #alumnos = []
+    alumnos = []
     numero_examen = 1
     aprobados = 0
     while not centinela == "No":
+        alumno = {}
         alumno["Examen número"]= numero_examen
         print("Examen número:", numero_examen)
         nombre = input("Ingrese el nombre del alumno: ")
@@ -91,12 +93,12 @@ def resultados_examenes():
         if resultado != "Examen no aprobado.":
             aprobados += 1
         print(alumno)
-        #alumnos.append(alumno)
+        alumnos.append(alumno)
         
         centinela = input("Desea ingresar otro alumno y su examen (-No- para terminar):")
         numero_examen += 1
 
     porcentaje_examenes = (aprobados * 100) / numero_examen-1
-    return print(f"De {numero_examen-1} alumnos, aprobaron: {aprobados}, un {porcentaje_examenes:.2f} % de aprobados.") 
+    return (f"Resultados finales de los examenes: {alumnos}. De {numero_examen-1} alumnos, aprobaron: {aprobados}, un {porcentaje_examenes:.2f} % de aprobados.") 
 
-resultados_examenes()
+print(resultados_examenes())

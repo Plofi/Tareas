@@ -12,10 +12,6 @@ z = pedir_entero("¿Cuál es tu número favorito?", -50, 50)
 Por favor ingresa un número entre -50 y 50.
 
 """
-def centinela(numero,minimo,maximo):
-    numero = input(f"Por favor ingresa un número entero entre {minimo} y {maximo}:")
-    return numero
-
 def pedir_entero(mensaje,minimo,maximo):
     """
     Devuelve un mensaje ingresado y el número entero ingresado por el usuario.
@@ -30,16 +26,18 @@ def pedir_entero(mensaje,minimo,maximo):
                 o una cadena que indica que lo vuelva a ingresar indefinidamente.
 
     """
-    print(f"{mensaje},[{minimo}..{maximo}]:")
-    numero = input()
-
-    numeros = ["0","1","2","3","4","5","6","7","8","9","-1","-2","-3","-4","-5","-6","-7","-8","-9"]
-
-    while numero[0] not in numeros:
-        numero = centinela(numero,minimo,maximo)
+    assert isinstance(minimo, int), "El mínimo debe ser un número entero."
+    assert isinstance(maximo, int), "El máximo deber ser un número entero."
+    try:
+        numero = input(f"{mensaje},[{minimo}..{maximo}]:")
+               
         while int(numero) < minimo or int(numero) > maximo:
-            numero = centinela(numero,minimo,maximo)
-    return numero
+            numero = input(f"Por favor ingresa un número entero entre {minimo} y {maximo}:")
+        else:
+            return numero
+            
+    except ValueError:
+        return("Ingrese un número entero.")
 
 #Ej.
 print(pedir_entero("¿Cuál es tu número favorito?",-50,50))
