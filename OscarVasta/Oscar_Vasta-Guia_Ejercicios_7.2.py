@@ -23,7 +23,7 @@ def domino_a(ficha1,ficha2):
 def domino_b(fichas):
     fichasg1=()
     fichasg2=()
-    fichasg=()
+   
     fichase=fichas.split(' ')
     fichasg1=fichase[0].split('-')
     fichasg2=fichase[1].split('-')
