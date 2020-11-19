@@ -13,8 +13,8 @@ def campana_electoral_mje(nombres):
         Parameters:
                 (tuple) De nombres.
 
-        Returns: 
-                (str) Imprime una cadena con el mje.
+        Output: 
+                Imprime una cadena con el mje.
 
     """
     for i in nombres:

@@ -15,8 +15,8 @@ def campana_electoral_mje_genero(nombres):
         Parameters:
                 (tuple(tuple)) De nombres y género, ej.("Flor","fem").
 
-        Returns: 
-                (str) Imprime una cadena con el mje modificado según el género ingresado.
+        Output: 
+                Imprime una cadena con el mje modificado según el género ingresado.
 
     """
     for i in range(len(nombres)):
