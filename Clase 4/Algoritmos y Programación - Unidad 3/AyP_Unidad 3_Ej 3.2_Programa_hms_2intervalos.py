@@ -1,6 +1,8 @@
 #Escribir un programa que pida al usuario 2 intervalos en (h,m,s),
 # sume sus duraciones y muestre el resultado en h,m,s
 
+#@OscarVasta : este programa funciona correctamente
+
 def calculo_seg(h,m,s):
     return (h*3600+m*60+s)
 
@@ -12,14 +14,13 @@ def calculo_hms(s):
         hora = s-3600
         s = hora
         h = h+1
-    else:    
+    else:
         while s>=60:
             minutos = s-60
             s = minutos
             m = m+1
     s = int(s)
     return ((print("La suma de sus intervalos expresados en horas, minutos y segundos es:",h,":",m,":",s)))
-
 
 h1=int(input("Introduzca la hora del intervalo 1:"))
 m1=int(input("Introduzca los minutos del intervalo 1:"))

@@ -1,6 +1,8 @@
 # Ej. 3.1.b. Escribir una función que calcule la duración en hs, min y seg de un intervalo dado en segundos:
 #En programa sería:
 
+# @OscarVasta: este programa funciona correctamente
+
 def calculo_hms (s):
     h = 0
     m = 0
@@ -8,7 +10,7 @@ def calculo_hms (s):
         hora = s-3600
         s = hora
         h = h+1
-    else:    
+    else:
         while s>=60:
             minutos = s-60
             s = minutos
