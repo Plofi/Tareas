@@ -1,5 +1,5 @@
 #Ej. 3.3 = Escribir una función, que dado 4 números, devuelva el mayor producto:
-
+# @OscarVasta : este programa funciona correctamente
 def mayor_producto(a,b,c,d):
     producto = []
     producto.append(a*b)
