@@ -1,5 +1,0 @@
-print("¡Hola!")
-nombre = input()
-print(nombre)
-nombre = input()
-print(nombre)
